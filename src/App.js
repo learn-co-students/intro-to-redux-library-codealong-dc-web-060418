@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import './App.css';
 
 class App extends Component {
-
+  /* event handler that references an action that is wrapped in a dispatch */
   handleOnClick = (event) => {
     this.props.increaseCount()
   }
@@ -31,5 +31,7 @@ const mapDispatchToProps = dispatch => {
     increaseCount: () => dispatch({type: 'INCREASE_COUNT'})
   }
 }
+
+/* sends the state and action down the component tree as props */
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
